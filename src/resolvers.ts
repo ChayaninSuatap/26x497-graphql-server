@@ -8,13 +8,16 @@ import sleep from "sleep-promise";
 //define how to return data
 export const resolvers = {
   Query: {
-    posts: async () => {
-      const result = [...posts];
-      result.sort((a, b) => (a.dateISOString > b.dateISOString ? -1 : 1));
-      return result;
+    users: () => {
+      return users;
     },
     user: (_, args) => {
       return users.find((user) => user.username === args.username);
+    },
+    posts: () => {
+      const result = [...posts];
+      result.sort((a, b) => (a.dateISOString > b.dateISOString ? -1 : 1));
+      return result;
     },
   },
 

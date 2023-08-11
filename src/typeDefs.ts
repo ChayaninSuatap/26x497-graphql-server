@@ -26,8 +26,9 @@ export const typeDefs = `#graphql
   }
 
   type Query {
-    posts: [Post]
+    users: [User]
     user(username: String!): User
+    posts: [Post]
   }
 
   type Mutation {
